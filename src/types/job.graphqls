@@ -1,0 +1,16 @@
+type Job {
+    jobId: String!
+    title: String!
+}
+
+input JobCreationInput {
+    title: String!
+}
+
+type Query {
+    getJob(jobId: String!): Job
+}
+
+type Mutation {
+    createJob(jobCreationInput: JobCreationInput!): Job
+}
