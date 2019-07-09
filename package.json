@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
+    "commit": "git-cz",
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "concurrently --handle-input \"wait-on dist/main.js && nodemon\" \"tsc -w -p tsconfig.build.json\" ",
@@ -29,6 +30,7 @@
     "class-validator": "^0.9.1",
     "graphql": "^14.4.2",
     "graphql-tools": "^4.0.5",
+    "mongoose": "^5.6.4",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
     "rxjs": "^6.3.3"
@@ -37,9 +39,11 @@
     "@nestjs/testing": "^6.0.0",
     "@types/express": "^4.16.0",
     "@types/jest": "^23.3.13",
+    "@types/mongoose": "^5.5.8",
     "@types/node": "^10.12.18",
     "@types/supertest": "^2.0.7",
     "concurrently": "^4.1.0",
+    "cz-conventional-changelog": "^2.1.0",
     "jest": "^23.6.0",
     "nodemon": "^1.18.9",
     "prettier": "^1.15.3",
@@ -64,5 +68,10 @@
     },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
